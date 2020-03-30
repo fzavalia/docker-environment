@@ -2,16 +2,12 @@ version: "3.7"
 
 services:
 
-  # portainer
-
   portainer:
     image: portainer/portainer
     ports: 
       - 9000:9000
     volumes: 
       - /var/run/docker.sock:/var/run/docker.sock
-
-  # redis
 
   redis:
     image: redis
@@ -24,8 +20,6 @@ services:
       - 8081:8081
     environment:
       - REDIS_HOST=redis
-
-  # postgres
 
   postgres:
     image: postgres
@@ -41,8 +35,6 @@ services:
     environment:
       - PGADMIN_DEFAULT_EMAIL=user@email.com
       - PGADMIN_DEFAULT_PASSWORD=pgadmin
-
-  # mongo
 
   mongo:
     image: mongo
